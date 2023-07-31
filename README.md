@@ -1,0 +1,2 @@
+# environment
+Stores device settings.
