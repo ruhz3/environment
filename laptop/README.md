@@ -62,3 +62,17 @@ sudo snap alias microk8s.kubectl kubectl
 # (웹 브라우저에서 localhost/dashboard -> ~/.kube/config 파일로 접속)
 kubectl apply -f ./resources/dashboard-ingress.yaml
 ```
+
+### 03. Scala 개발 환경 구성
+```
+# 0. jdk 설치
+sudo apt install openjdk-11-jdk
+
+# 1. Scala 설치 (cs setup)
+curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+
+# 2. IntelliJ Scala Plugin 설치
+
+# 3. IntelliJ 에서, Settings > Build, Execution, Deployment > Build Tools > sbt > sbt project: sbt shell > Allow overring sbt version 을 uncheck.
+```
+build.properties에 버전을 지정하면, sbt의 version을 지정하여 사용할 수 있다(지정하지 않으면 latest를 default로 가져온다). 그런데 3번 과정을 진행하지 않으면, build.properties의 지정 버전을 무시하고 IntelliJ 자체적으로 latest 버전으로 덮어쓰는 경우가 있다.
